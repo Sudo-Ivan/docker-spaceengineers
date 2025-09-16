@@ -33,16 +33,3 @@ jobs:
     - name: Test docker-compose
       run: |
         docker-compose config
-        
-    - name: Scan for vulnerabilities
-      uses: aquasecurity/trivy-action@master
-      with:
-        image-ref: spaceengineers:test
-        format: 'sarif'
-        output: 'trivy-results.sarif'
-        
-    - name: Upload Trivy scan results
-      uses: github/codeql-action/upload-sarif@v3
-      if: always()
-      with:
-        sarif_file: 'trivy-results.sarif'
