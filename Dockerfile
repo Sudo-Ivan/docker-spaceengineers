@@ -24,7 +24,8 @@ RUN \
   wine-mono \
   xorg-server-xvfb \
   cabextract \
-  winetricks
+  winetricks \
+  inetutils
 
 RUN \
   # Install steamcmd from AUR
